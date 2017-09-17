@@ -15204,7 +15204,7 @@ Gradiant Boosting takes more time on training, but when it comes to predicting t
 Similar to Accuracy, Gradiant Boosting does better with testing data, but has a lower score on training data. - Gradiant Boosting is better</p>
 </li>
 </ol>
-<p>Looking at all this data, Gradiant Boosting classifer is better for the data we are dealing with.</p>
+<p>Looking at all this data, Gradiant Boosting classifer is better for the data we are dealing with. And there is not much concern with spending additional time on training as this problem (identifying potential people who would come forward to donate for charity and reaching out to them) does not need real-time results.</p>
 
 </div>
 </div>
@@ -15229,7 +15229,10 @@ Similar to Accuracy, Gradiant Boosting does better with testing data, but has a 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Gradient Boosting iteratively improves on a function that is represented by an set of weak learners, which are decision trees.</p>
-<p>On each iteration, a decision tree is added minimizing the loss function, thus improving accuracy. In this manner, the function between inputs and outputs is improved with each decision tree that is added. The trees are built one after the other sequentially hence they take additional time during training. Once the Gradient Boosting classifier is optimally trained and a new data is fed, predictions are made on the learning (decision tree built) from the training data. Thus giving improved and more accurate predictions on unknown/unseen data.</p>
+<p>On each iteration, a decision tree is added minimizing the loss function, thus improving accuracy. In this manner, the function between inputs and outputs is improved with each decision tree that is added. The trees are built one after the other sequentially hence they take additional time during training. For each iteration, the learner accracy is graded. Weak lerners will be considered in the determination of the final solution. Once the Gradient Boosting classifier is optimally trained and a new data is fed, predictions are made on the learning (decision tree built - weak learners play a major role) from the training data. Thus giving improved and more accurate predictions on unknown/unseen data.</p>
+<p>Making this understandable from a layman term:</p>
+<p>When solving a difficult problem. You give an initial solution, which most likely will be bad, but you see where you are wrong and you are going to correct/improve that solution. In every iteration only thing you do is alternating your strategy to correct the mistakes made in previous one.</p>
+<p>You actually collect every iteration and estimate the error in each and assign a number. This indicates the importance of the solution according to it's correctness. For the final solution, you just consider all the "weak" answers you got. This combination of weak solutions works more accrately than a strong one.</p>
 
 </div>
 </div>
